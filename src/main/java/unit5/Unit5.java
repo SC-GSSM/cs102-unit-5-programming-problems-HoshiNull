@@ -19,20 +19,21 @@ public class Unit5 {
     public static void main(String[] args) {
         // Test your class here by creating objects and calling methods
         // Example: test the parameterized constructor (after implementing it)
-        // Unit5 obj = new Unit5("Alice", 25);
-        // System.out.println("getName() = " + obj.getName());  // Expected: Alice
-        // System.out.println("getAge() = " + obj.getAge());    // Expected: 25
-        // System.out.println("toString() = " + obj);           // Expected: Unit5{name='Alice', age=25}
+         Unit5 obj = new Unit5("Alice", 25);
+         System.out.println("getName() = " + obj.getName());  // Expected: Alice
+         System.out.println("getAge() = " + obj.getAge());    // Expected: 25
+         System.out.println("toString() = " + obj);           // Expected: Unit5{name='Alice', age=25}
         System.out.println("Implement the class below, then uncomment the test code above.");
     }
 
     // TODO: Declare private instance variables:
     //   - name (String)
     //   - age (int)
-
+    private String name;
+    private int age;
     // TODO: Declare a private static variable:
     //   - count (int) — tracks how many Unit5 objects have been created
-
+    private static int count = 0;
     /**
      * Default constructor. Sets name to "Unknown" and age to 0.
      * Must increment the static count variable.
@@ -42,7 +43,11 @@ public class Unit5 {
      * <p>Hint: Initialize name = "Unknown" and age = 0, then do count++</p>
      */
     // TODO: Implement default constructor
-
+    public Unit5(){
+        name="Unknown";
+        age=0;
+        count++;
+    }
     /**
      * Parameterized constructor. Sets name and age to the given values.
      * Must increment the static count variable.
@@ -57,7 +62,11 @@ public class Unit5 {
      * @param age the age to set
      */
     // TODO: Implement parameterized constructor
-
+    public Unit5(String name,int age){
+        this.name=name;
+        this.age=age;
+        count++;
+    }
     /**
      * Overloaded constructor. Takes only a name, sets age to 0.
      * Must increment the static count variable.
@@ -71,35 +80,47 @@ public class Unit5 {
      * @param name the name to set
      */
     // TODO: Implement overloaded constructor (name only)
-
+    public Unit5(String name){
+        this.name=name;
+        age=0;
+        count++;
+    }
     /**
      * Returns the name of this Unit5 object.
      *
      * @return the name
      */
     // TODO: Implement getName()
-
+    public String getName(){
+        return name;
+    }
     /**
      * Sets the name of this Unit5 object.
      *
      * @param name the new name
      */
     // TODO: Implement setName()
-
+    public void setName(String n){
+        name=n;
+    }
     /**
      * Returns the age of this Unit5 object.
      *
      * @return the age
      */
     // TODO: Implement getAge()
-
+    public int getAge(){
+        return age;
+    }
     /**
      * Sets the age of this Unit5 object.
      *
      * @param age the new age
      */
     // TODO: Implement setAge()
-
+    public void setAge(int a){
+        age=a;
+    }
     /**
      * Returns the total number of Unit5 objects created.
      * This is a static method because count belongs to the class, not an instance.
@@ -107,7 +128,9 @@ public class Unit5 {
      * @return the count of objects created
      */
     // TODO: Implement static getCount()
-
+    public static int getCount(){
+        return count;
+    }
     /**
      * Returns a string representation of this Unit5 object.
      * Format: Unit5{name='[name]', age=[age]}
@@ -123,4 +146,7 @@ public class Unit5 {
      * @return formatted string representation
      */
     // TODO: Override toString()
+    public String toString(){
+        return "Unit5{name='" + name + "', age=" + age + "}";
+    }
 }
